@@ -1,0 +1,25 @@
+[package]
+name = "browser_launcher"
+version = "0.1.0"
+authors = ["MechWipf <MechWipf@googlemail.com>"]
+edition = "2018"
+
+[package.metadata.winres]
+OriginalFilename = "browser_launcher.exe"
+ProductName = "Browser Launcher"
+FileDescription = "Browser Launcher"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+winreg = "~0.7"
+log = "~0.4"
+log4rs = "~0.13"
+toml = "~0.5"
+serde = { version = "~1.0", features = ["derive"] }
+regex = "~1.3"
+anyhow = "~1.0"
+thiserror = "~1.0"
+
+[target.'cfg(windows)'.build-dependencies]
+winres = "0.1"
