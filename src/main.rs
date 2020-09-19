@@ -26,7 +26,8 @@ fn main() -> Result<()> {
                 return Ok(());
             }
             url => {
-                launch_browser(url);
+                launch_browser(url)
+                    .context("failed to launch url")?;
             }
         }
     }
